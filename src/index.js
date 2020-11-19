@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './mparticle'; // defines window.mParticle
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'branch-mparticle-web-kit';
