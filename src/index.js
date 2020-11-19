@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './mparticle'; // defines window.mParticle
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@mparticle/branch-web-kit';
+
+window.mParticle.forwarder.init({branchKey: 'key_live_josS8XQjiiSEp8XAEfOymdpdusaRIdAM'}, () => {
+
+});
 
 ReactDOM.render(
   <React.StrictMode>
