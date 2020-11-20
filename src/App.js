@@ -1,33 +1,35 @@
+import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
 import 'branch-mparticle-web-kit';
 
-function App() {
-  const closeJourney = () => {
+export default class App extends Component {
+  closeJourney() {
     window.branch.closeJourney((err, data) => {
       console.log(`error: ${err}, data: ${JSON.stringify(data)}`)
     });
-  };
-  const trackPageview = () => {
-    window.branch.track('pageview');
-  };
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={closeJourney}>
-          Close Journey
-        </button>
-        <button onClick={trackPageview}>
-          Track Pageview
-        </button>
-      </header>
-    </div>
-  );
-}
+  }
 
-export default App;
+  trackPageview() {
+    window.branch.track('pageview');
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <button onClick={this.closeJourney.bind(this)}>
+            Close Journey
+          </button>
+          <button onClick={this.trackPageview.bind(this)}>
+            Track Pageview
+          </button>
+        </header>
+      </div>
+    );
+  }
+};
