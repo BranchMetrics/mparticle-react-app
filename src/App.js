@@ -13,7 +13,10 @@ import 'branch-mparticle-web-kit';
 
 const browserHistory = createBrowserHistory();
 browserHistory.listen(location => {
-  if (!window.branch) return;
+  if (!window.branch) {
+    console.warn(`window.branch is ${window.branch}`);
+    return;
+  }
 
   window.branch.closeJourney(() => {
     setTimeout(() => {
