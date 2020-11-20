@@ -3,10 +3,6 @@ import './App.css';
 import 'branch-mparticle-web-kit';
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     if (!window.branch) {
       console.warn('window.branch not defined at component mount');
