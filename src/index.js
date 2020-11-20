@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import mParticle from '@mparticle/web-sdk';
 import BranchMetrics from 'branch-mparticle-web-kit';
 
