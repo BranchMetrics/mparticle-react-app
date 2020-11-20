@@ -20,7 +20,9 @@ browserHistory.listen(location => {
 
   window.branch.closeJourney(() => {
     setTimeout(() => {
-      window.branch.track('pageview');
+      const url = `${window.location.origin}${location.pathname}`;
+      console.log(`Logging pageview to ${url}`);
+      window.branch.track('pageview', {}, { url: url });
     }, 1000);
   });
 });
