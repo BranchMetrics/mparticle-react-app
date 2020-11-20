@@ -2,13 +2,25 @@ import './App.css';
 import About from './About';
 import Home from './Home';
 import {
-  BrowserRouter as Router,
+  Router,
   Redirect,
   Switch,
   Route,
   Link,
 } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import 'branch-mparticle-web-kit';
+
+const browserHistory = createBrowserHistory();
+browserHistory.listen(location => {
+  if (!window.branch) return;
+
+  window.branch.closeJourney(() => {
+    setTimeout(() => {
+      window.branch.track('pageview');
+    }, 1000);
+  });
+});
 
 export default function App() {
   const closeJourney = () => {
@@ -22,7 +34,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router history={browserHistory}>
       <div className='App-header'>
         <nav>
           <Link className='App-link' to='/home'>Home</Link>
