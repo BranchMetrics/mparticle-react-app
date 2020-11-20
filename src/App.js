@@ -6,7 +6,7 @@ import 'branch-mparticle-web-kit';
 export default class App extends Component {
   closeJourney() {
     window.branch.closeJourney((err, data) => {
-      console.log(`error: ${err}, data: ${JSON.stringify(data)}`)
+      console.log(`error: ${err}, data: ${JSON.stringify(data)}`);
     });
   }
 
