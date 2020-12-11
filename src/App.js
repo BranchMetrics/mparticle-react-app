@@ -13,6 +13,7 @@ import 'branch-mparticle-web-kit';
 
 const browserHistory = createBrowserHistory();
 browserHistory.listen(location => {
+  /* Can use browser history events instead of component lifecycle events to detect route changes
   if (!window.branch) {
     console.warn(`window.branch is ${window.branch}`);
     return;
@@ -25,6 +26,7 @@ browserHistory.listen(location => {
       window.branch.track('pageview', {}, { url: url });
     }, 1000);
   });
+  // */
 });
 
 export default function App() {
