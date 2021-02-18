@@ -2711,13 +2711,18 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-branch-mparticle-web-kit@1.0.4:
+"branch-mparticle-web-kit@file:../../github/BranchMetrics/mparticle-javascript-integration-branch":
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/branch-mparticle-web-kit/-/branch-mparticle-web-kit-1.0.4.tgz#76f42d841d64cad9795d8a1291e9a6c0f8e4eef8"
-  integrity sha512-Wp1ptzZ8vFh6+5nllIbjdduO+gdbpMhgp58+09u55taeSrUJjnQSTE9Kta6thK8c4a1zpbhkE+dsQdDvCFA9dA==
   dependencies:
     "@mparticle/web-kit-wrapper" "^1.0.5"
     "@mparticle/web-sdk" "^2.11.3"
+
+branch-sdk@^2.57.0:
+  version "2.57.1"
+  resolved "https://registry.yarnpkg.com/branch-sdk/-/branch-sdk-2.57.1.tgz#53d03e50b140c91d2521d684d12f8127485319fc"
+  integrity sha512-jp7dPAqi5I972D92TMhqiZ/Od/jQzuOXXz5SyBSqFVCo6YpHMvGqdHghtH2nP0KbD3Ol0oWja3DmDAFfl5++Nw==
+  dependencies:
+    request "^2.55.0"
 
 brorand@^1.0.1:
   version "1.1.0"
@@ -9309,7 +9314,7 @@ request-promise-native@^1.0.8:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.88.2:
+request@^2.55.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==

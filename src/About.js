@@ -1,18 +1,14 @@
 import { Component } from 'react';
 import './App.css';
+import branch from 'branch-sdk';
 
 export default class About extends Component {
   componentDidMount() {
-    if (!window.branch) {
-      console.warn(`window.branch is ${window.branch}`);
-      return;
-    }
-
-    window.branch.closeJourney(() => {
+    branch.closeJourney(() => {
       setTimeout(() => {
         const url = `${window.location.origin}/journeys-demo/about`;
         console.log(`Logging pageview to ${url}`);
-        window.branch.track('pageview', {}, { url: url });
+        branch.track('pageview', {}, { url: url });
       }, 1000);
     });
   }
