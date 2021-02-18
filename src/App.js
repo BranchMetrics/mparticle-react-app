@@ -10,20 +10,16 @@ import {
 } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import 'branch-mparticle-web-kit';
+import branch from 'branch-sdk';
 
 const browserHistory = createBrowserHistory();
 browserHistory.listen(location => {
   /* Can use browser history events instead of component lifecycle events to detect route changes
-  if (!window.branch) {
-    console.warn(`window.branch is ${window.branch}`);
-    return;
-  }
-
-  window.branch.closeJourney(() => {
+  branch.closeJourney(() => {
     setTimeout(() => {
       const url = `${window.location.origin}${location.pathname}`;
       console.log(`Logging pageview to ${url}`);
-      window.branch.track('pageview', {}, { url: url });
+      branch.track('pageview', {}, { url: url });
     }, 1000);
   });
   // */
@@ -31,13 +27,13 @@ browserHistory.listen(location => {
 
 export default function App() {
   const closeJourney = () => {
-    window.branch.closeJourney((err, data) => {
+    branch.closeJourney((err, data) => {
       console.log(`error: ${err}, data: ${JSON.stringify(data)}`);
     });
   };
 
   const trackPageview = () => {
-    window.branch.track('pageview');
+    branch.track('pageview');
   };
 
   return (
