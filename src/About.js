@@ -6,7 +6,7 @@ export default class About extends Component {
   componentDidMount() {
     branch.closeJourney(() => {
       setTimeout(() => {
-        const url = `${window.location.origin}/journeys-demo/about`;
+        const url = `${window.location.origin}/pure-journeys-demo/about`;
         console.log(`Logging pageview to ${url}`);
         branch.track('pageview', {}, { url: url });
       }, 1000);
