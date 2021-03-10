@@ -3,31 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import branch from 'branch-sdk';
 
-import mParticle from '@mparticle/web-sdk';
-import BranchMetrics from 'branch-mparticle-web-kit';
+const branchKey = 'key_live_josS8XQjiiSEp8XAEfOymdpdusaRIdAM';
 
-const config = {
-  isDevelopmentMode: true, //switch to false (or remove) for production
-  identifyRequest: {
-    userIdentities: {
-      other3: 'otheridentity3',
-      customerid: '123456',
-    }
-  },
-  identityCallback: result => {
-    // You can check if there's a populated user object, otherwise there was an error
-    // You can also inspect the result.httpCode - see below for a description of the supported codes
-    if (result.getUser()) {
-        result.getUser().setUserAttribute('age', '25');
-    } else {
-        //the IDSync call failed - see below for more details on failed requests
-    }
-  },
-};
+branch.init(branchKey, function(err, data) {
 
-BranchMetrics.register(config);
-mParticle.init("ad0494840f664c488a4c924d97ae5fdf", config);
+});
 
 ReactDOM.render(
   <React.StrictMode>
