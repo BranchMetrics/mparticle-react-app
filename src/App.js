@@ -39,19 +39,19 @@ export default function App() {
     <Router history={browserHistory}>
       <div className='App-header'>
         <nav>
-          <Link className='App-link' to='/journeys-demo/home'>Home</Link>
+          <Link className='App-link' to='/pure-journeys-demo/home'>Home</Link>
           &nbsp;
-          <Link className='App-link' to='/journeys-demo/about'>About</Link>
+          <Link className='App-link' to='/pure-journeys-demo/about'>About</Link>
         </nav>
         <Switch>
-          <Route path='/journeys-demo/about'>
+          <Route path='/pure-journeys-demo/about'>
             <About/>
           </Route>
-          <Route path='/journeys-demo/home'>
+          <Route path='/pure-journeys-demo/home'>
             <Home/>
           </Route>
           <Route path='/'>
-            <Redirect to='/journeys-demo/home'/>
+            <Redirect to='/pure-journeys-demo/home'/>
           </Route>
         </Switch>
         <button onClick={closeJourney}>
